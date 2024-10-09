@@ -6,6 +6,9 @@ export default {
       colors: {
         "soft-pink": "#CF6382",
       },
+      boxShadow: {
+        basic: "0px 0px 3px 3px rgba(0, 0, 0, 0.1)",
+      },
     },
   },
   plugins: [],

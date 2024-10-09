@@ -5,10 +5,12 @@ import {
   faKitchenSet,
 } from "@fortawesome/free-solid-svg-icons";
 import lettersugary from "../../assets/files/sugary.pdf";
+import OurCategories from "./OurCategories";
 
 export default function NavBar() {
   return (
     <nav className="flex justify-around items-center py-5 border-y">
+      <OurCategories />
       <ul className="flex gap-8 justify-center items-center">
         <li>
           <a
