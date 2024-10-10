@@ -9,13 +9,18 @@ export default function PageHeader() {
     <header>
       <div className="my-3 flex justify-around items-center">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="logo" className="size-20 rounded-full" />
-          <p className=" text-soft-pink font-bold text-3xl">Sugary</p>
+          <img
+            src={logo}
+            alt="logo"
+            className="size-12 md:size-20 rounded-full"
+          />
+          <p className="hidden md:block text-soft-pink font-bold text-3xl">
+            Sugary
+          </p>
         </div>
         <SearchBar />
         <FontAwesomeIcon icon={faCartShopping} className="size-7" />
       </div>
-
       <NavBar />
     </header>
   );

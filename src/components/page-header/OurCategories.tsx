@@ -12,7 +12,7 @@ import Category from "./Category";
 
 export default function OurCategories() {
   return (
-    <div className="relative group">
+    <div className="hidden md:block relative group">
       <div className="flex items-center gap-2 py-3 pl-10 pr-20 rounded-full bg-soft-pink text-white cursor-pointer">
         <FontAwesomeIcon icon={faBars} />
         <p>NUESTRAS CATEGORÍAS</p>
