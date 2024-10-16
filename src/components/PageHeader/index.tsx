@@ -14,9 +14,9 @@ export default function PageHeader() {
             alt="logo"
             className="size-12 md:size-20 rounded-full"
           />
-          <p className="hidden md:block text-soft-pink font-bold text-3xl">
+          <span className="hidden md:block text-soft-pink font-bold text-3xl">
             Sugary
-          </p>
+          </span>
         </div>
         <SearchBar />
         <FontAwesomeIcon icon={faCartShopping} className="size-7" />
