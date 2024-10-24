@@ -1,12 +1,12 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PageHeader from "./components/PageHeader/index.tsx";
+import Layout from "./components/Layout/index.tsx";
 import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PageHeader />,
+    element: <Layout />,
     children: [
       {
         path: "categories/:categoryId",
