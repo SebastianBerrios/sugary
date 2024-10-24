@@ -1,7 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageHeader from "./components/PageHeader/index.tsx";
-import Category from "./components/Category/index.tsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -11,7 +10,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "categories/:categoryId",
-        element: <Category />,
+        element: "",
       },
     ],
   },
