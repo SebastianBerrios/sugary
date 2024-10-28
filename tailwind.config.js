@@ -10,6 +10,9 @@ export default {
       boxShadow: {
         basic: "0px 0px 3px 3px rgba(0, 0, 0, 0.1)",
       },
+      fontFamily: {
+        "tt-travels-next": ["tt-travels-next", "sans-serif"],
+      },
     },
   },
   plugins: [],
