@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "tt-travels-next";
+  src: url("src/assets/fonts/TT-Travels-Next-Trial-Regular.ttf")
+    format("truetype");
+}
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  font-family: tt-travels-next;
 }
