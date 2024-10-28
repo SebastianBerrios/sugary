@@ -8,7 +8,7 @@ import {
   faIceCream,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
-import Category from "../Category";
+import CategoryItem from "../CategoryItem";
 
 export default function OurCategories() {
   return (
@@ -19,12 +19,12 @@ export default function OurCategories() {
       </div>
       <div className="invisible absolute group-hover:visible">
         <ul className="w-max grid grid-cols-2 gap-3 justify-items-start items-center bg-white p-4 border rounded-lg shadow-basic">
-          <Category label="tortas" icon={faCake} />
-          <Category label="cheesecakes" icon={faCheese} />
-          <Category label="postres" icon={faIceCream} />
-          <Category label="tablas de queso" icon={faUtensils} />
-          <Category label="dulce" icon={faCandyCane} />
-          <Category label="salado" icon={faDrumstickBite} />
+          <CategoryItem label="tortas" icon={faCake} />
+          <CategoryItem label="cheesecakes" icon={faCheese} />
+          <CategoryItem label="postres" icon={faIceCream} />
+          <CategoryItem label="tablas de queso" icon={faUtensils} />
+          <CategoryItem label="dulce" icon={faCandyCane} />
+          <CategoryItem label="salado" icon={faDrumstickBite} />
         </ul>
       </div>
     </div>

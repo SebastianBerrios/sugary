@@ -6,7 +6,7 @@ interface CategoryI {
   icon: IconProp;
 }
 
-export default function Category({ label, icon }: CategoryI) {
+export default function CategoryItem({ label, icon }: CategoryI) {
   return (
     <li className="w-40 p-1.5 border rounded-md">
       <FontAwesomeIcon icon={icon} className="text-soft-pink pr-2" />
