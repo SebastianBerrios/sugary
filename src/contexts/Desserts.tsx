@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
-import { IDessert } from "../types/Dessert";
+import { IDessert } from "../types/dessert";
 
 interface DessertContextType {
   dessert: any;
@@ -17,7 +17,7 @@ interface DessertContextProps {
 }
 
 export default function DessertProvider({ children }: DessertContextProps) {
-  const [dessert, setDessert] = useState<[]>([]);
+  const [dessert, setDessert] = useState<IDessert[]>([]);
 
   useEffect(() => {
     const fetchDulces = async () => {
