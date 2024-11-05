@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DessertProvider from "./contexts/Desserts.tsx";
 import Layout from "./components/Layout/index.tsx";
 import Home from "./pages/Home/index.tsx";
+import DessertDetail from "./pages/DessertDetail/index.tsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
       },
       {
         path: "categories/:categoryId",
-        element: "",
+        element: <DessertDetail />,
       },
     ],
   },
