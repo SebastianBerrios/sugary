@@ -3,12 +3,17 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/images/logo.webp";
 import SearchBar from "../SearchBar";
 import NavBar from "../NavBar";
+import { useContext } from "react";
+import { DessertContext } from "../../contexts/Desserts";
+import { Link } from "react-router-dom";
 
 export default function PageHeader() {
+  const dessert = useContext(DessertContext);
+
   return (
     <header>
       <div className="my-3 flex justify-around items-center">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img
             src={logo}
             alt="logo"
@@ -17,9 +22,13 @@ export default function PageHeader() {
           <p className="hidden md:block text-soft-pink font-bold text-3xl">
             Sugary
           </p>
-        </div>
+        </Link>
+        <div></div>
         <SearchBar />
-        <FontAwesomeIcon icon={faCartShopping} className="size-7" />
+        <div>
+          <span>{dessert.countShoppingCart}</span>
+          <FontAwesomeIcon icon={faCartShopping} className="size-7" />
+        </div>
       </div>
       <NavBar />
     </header>

@@ -1,11 +1,14 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, ReactNode } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { IDessert } from "../types/dessert";
 
 interface DessertContextType {
+  name: ReactNode;
   dessert: any;
   setDessert: React.Dispatch<React.SetStateAction<IDessert>>;
+  countShoppingCart: number;
+  setCountShoppingCart: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const DessertContext = createContext<DessertContextType>(
@@ -17,7 +20,8 @@ interface DessertContextProps {
 }
 
 export default function DessertProvider({ children }: DessertContextProps) {
-  const [dessert, setDessert] = useState<IDessert[]>([]);
+  const [dessert, setDessert] = useState([]);
+  const [countShoppingCart, setCountShoppingCart] = useState<number>(0);
 
   useEffect(() => {
     const fetchDulces = async () => {
@@ -34,7 +38,9 @@ export default function DessertProvider({ children }: DessertContextProps) {
   }, []);
 
   return (
-    <DessertContext.Provider value={{ dessert }}>
+    <DessertContext.Provider
+      value={{ dessert, setDessert, countShoppingCart, setCountShoppingCart }}
+    >
       {children}
     </DessertContext.Provider>
   );

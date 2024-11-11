@@ -17,7 +17,7 @@ export default function DessertDetail() {
   const [count, setCount] = useState<number>(0);
 
   const addDessertShoppingCart = () => {
-    setCountShoppingCart(countShoppingCart + count);
+    dessert.setCountShoppingCart(dessert.countShoppingCart + count);
     setCount(0);
   };
 
