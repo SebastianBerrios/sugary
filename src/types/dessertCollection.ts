@@ -1,4 +1,4 @@
-export interface IDessert {
+export interface IDessertCollection {
   id: number;
   name: string;
   category: string;

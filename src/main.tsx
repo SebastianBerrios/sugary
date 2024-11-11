@@ -5,6 +5,7 @@ import Layout from "./components/Layout/index.tsx";
 import Home from "./pages/Home/index.tsx";
 import DessertDetail from "./pages/DessertDetail/index.tsx";
 import "./index.css";
+import CategoryProvider from "./contexts/Category.tsx";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")!).render(
-  <DessertProvider>
-    <RouterProvider router={router} />
-  </DessertProvider>
+  <CategoryProvider>
+    <DessertProvider>
+      <RouterProvider router={router} />
+    </DessertProvider>
+  </CategoryProvider>
 );

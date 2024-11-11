@@ -1,14 +1,14 @@
-import { createContext, useState, useEffect, ReactNode } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
-import { IDessert } from "../types/dessert";
+import { createContext, useState } from "react";
+import { IDessertCollection } from "../types/dessertCollection";
+import { useFetchCollection } from "../hooks/useFetchCollection";
 
 interface DessertContextType {
-  name: ReactNode;
-  dessert: any;
-  setDessert: React.Dispatch<React.SetStateAction<IDessert>>;
+  dessert: IDessertCollection[];
+  setDessert: React.Dispatch<React.SetStateAction<IDessertCollection[]>>;
   countShoppingCart: number;
   setCountShoppingCart: React.Dispatch<React.SetStateAction<number>>;
+  loading: boolean;
+  error: string | null;
 }
 
 export const DessertContext = createContext<DessertContextType>(
@@ -20,26 +20,19 @@ interface DessertContextProps {
 }
 
 export default function DessertProvider({ children }: DessertContextProps) {
-  const [dessert, setDessert] = useState([]);
+  const { data: dessert, loading, error } = useFetchCollection("desserts");
   const [countShoppingCart, setCountShoppingCart] = useState<number>(0);
-
-  useEffect(() => {
-    const fetchDulces = async () => {
-      const dessertCollection = collection(db, "desserts");
-      const dessertSnapshot = await getDocs(dessertCollection);
-      const dessertsList: any = dessertSnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setDessert(dessertsList);
-    };
-
-    fetchDulces();
-  }, []);
 
   return (
     <DessertContext.Provider
-      value={{ dessert, setDessert, countShoppingCart, setCountShoppingCart }}
+      value={{
+        dessert,
+        setDessert: () => {},
+        countShoppingCart,
+        setCountShoppingCart,
+        loading,
+        error,
+      }}
     >
       {children}
     </DessertContext.Provider>
