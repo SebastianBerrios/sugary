@@ -4,6 +4,7 @@ import DessertProvider from "./contexts/Desserts.tsx";
 import CategoryProvider from "./contexts/Category.tsx";
 import Layout from "./components/Layout/index.tsx";
 import Home from "./pages/Home/index.tsx";
+import CategoryDetail from "./pages/CategoryDetail/index.tsx";
 import DessertDetail from "./pages/DessertDetail/index.tsx";
 import "./index.css";
 
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/:categoryId",
+        element: <CategoryDetail />,
       },
       {
         path: "categories/:categoryId",

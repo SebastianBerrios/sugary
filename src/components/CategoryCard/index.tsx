@@ -10,7 +10,7 @@ export default function CategoryCard() {
     <>
       <div className="mb-10 flex justify-center gap-6">
         {categories.map((category) => (
-          <Link key={category.id} to={`categories/${category.name}`}>
+          <Link key={category.id} to={`/${category.name}`}>
             <div>
               <img
                 className="w-60 h-auto"
