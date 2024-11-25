@@ -20,7 +20,7 @@ export default function Home() {
         <h2 className="text-center text-2xl mb-4">Nuestras recomendacioens</h2>
         <div className="flex gap-5 mx-4">
           {desserts.map((dessert: any) => (
-            <Link key={dessert.id} to={`/categories/${dessert.name}`}>
+            <Link key={dessert.id} to={`/desserts/${dessert.name}`}>
               <DessertCard
                 id={dessert.id}
                 label={dessert.name}

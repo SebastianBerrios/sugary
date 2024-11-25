@@ -6,8 +6,12 @@
   font-family: "tt-travels-next";
   src: url("src/assets/fonts/TT-Travels-Next-Trial-Regular.ttf")
     format("truetype");
+  src: url("/desserts/src/assets/fonts/TT-Travels-Next-Trial-Regular.woff")
+      format("woff"),
+    url("/desserts/src/assets/fonts/TT-Travels-Next-Trial-Regular.woff2")
+      format("woff2");
 }
 
-* {
-  font-family: tt-travels-next;
+body {
+  font-family: "TT Travels Next", sans-serif;
 }

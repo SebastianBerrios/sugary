@@ -33,7 +33,7 @@ export default function CategoryDetail() {
       </aside>
       <section className="flex gap-5 mx-4">
         {desserts.map((dessert: any) => (
-          <Link key={dessert.id} to={`/${dessert.name}`}>
+          <Link key={dessert.id} to={`/desserts/${dessert.name}`}>
             <DessertCard
               id={dessert.id}
               label={dessert.name}
